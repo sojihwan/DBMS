@@ -5,59 +5,59 @@
     <title>Title</title>
 </head>
 <body>
-CREATE TABLE training(
-num NUMBER NOT NULL,
-name VARCHAR(20) NOT NULL,
-age NUMBER NOT NULL,
-inday DATE NOT NULL,
-outgoing NUMBER
-)
-CREATE TABLE test(
-test_name VARCHAR(20),
-social_num VARCHAR(20)
-);
-
-INSERT INTO training VALUES(1234,'소지환',18,'2021-11-15',0);
-INSERT INTO training VALUES(1324,'손요한',18,'2021-11-15',0);
-INSERT INTO training VALUES(1434,'홍씨',18,'2021-11-15',0);
-INSERT INTO training VALUES(3233,'김아무게',48,'1960-11-15',1);
-
-select * from training where MOD(NUM,2)=1;//사원 번호가 홀수 출력
-select * from training where age>=19;//나이가 19살 이하 출력
-
-select * from test;
-select * from test WHERE MOD(social_num,2)=0;
-DROP DATABASE test;
-
-dizzy NUMRER := 1;
-
-INSERT INTO test (test_neme,social_num) SELECT substr(name,2,1),TO_CHAR(POWER(num,2),num9999) FROM training;
-INSERT INTO test (test_name) SELECT DISTINCT substr(name,2,1) FROM training;
-SELECT * FROM test;
-
-1 SELECT * FROM test WHERE social_num=’2056356’;
-2 SELECT * FROM test WHERE social_num=2056356;
-3 SELECT * FROM test WHERE social_num=2056356
-4 SELECT * FROM test WHERE social_num=”2056356”
-5 SELECT * FROM test WHERE social_num=2;
-
-
-
-
-
-
-
-
-다른 SQL에서 가능 PL/SQL
-DECLARE
-EX_NUM CONSTANT NUMBER := 10;
-EX_STR VARCHAR2(10);
-
-BEGIN
-EX_STR := 'EXAMPLE';
-DBMS_OUTPUT.PUT_LINE(EX_NUM);
-DBMS_OUTPUT.PUT_LINE(EX_STR);
-END;
-
+CREATE TABLE training(<br>
+num NUMBER NOT NULL,<br>
+name VARCHAR(20) NOT NULL,<br>
+age NUMBER NOT NULL,<br>
+inday DATE NOT NULL,<br>
+outgoing NUMBER<br>
+)<br>
+CREATE TABLE test(<br>
+test_name VARCHAR(20),<br>
+social_num VARCHAR(20)<br>
+);<br>
+<br>
+INSERT INTO training VALUES(1234,'소지환',18,'2021-11-15',0);<br>
+INSERT INTO training VALUES(1324,'손요한',18,'2021-11-15',0);<br>
+INSERT INTO training VALUES(1434,'홍씨',18,'2021-11-15',0);<br>
+INSERT INTO training VALUES(3233,'김아무게',48,'1960-11-15',1);<br>
+<br>
+select * from training where MOD(NUM,2)=1;//사원 번호가 홀수 출력<br>
+select * from training where age>=19;//나이가 19살 이하 출력<br>
+<br>
+select * from test;<br>
+select * from test WHERE MOD(social_num,2)=0;<br>
+DROP DATABASE test;<br>
+<br>
+dizzy NUMRER := 1;<br>
+<br>
+INSERT INTO test (test_neme,social_num) SELECT substr(name,2,1),TO_CHAR(POWER(num,2),num9999) FROM training;<br>
+INSERT INTO test (test_name) SELECT DISTINCT substr(name,2,1) FROM training;<br>
+SELECT * FROM test;<br>
+<br>
+1 SELECT * FROM test WHERE social_num=’2056356’;<br>
+2 SELECT * FROM test WHERE social_num=2056356;<br>
+3 SELECT * FROM test WHERE social_num=2056356<br>
+4 SELECT * FROM test WHERE social_num=”2056356”<br>
+5 SELECT * FROM test WHERE social_num=2;<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+다른 SQL에서 가능 PL/SQL<br>
+DECLARE<br>
+EX_NUM CONSTANT NUMBER := 10;<br>
+EX_STR VARCHAR2(10);<br>
+<br>
+BEGIN<br>
+EX_STR := 'EXAMPLE';<br>
+DBMS_OUTPUT.PUT_LINE(EX_NUM);<br>
+DBMS_OUTPUT.PUT_LINE(EX_STR);<br>
+END;<br>
+<br>
 </body>
 </html>
